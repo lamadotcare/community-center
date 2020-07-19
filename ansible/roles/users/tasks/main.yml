@@ -1,0 +1,24 @@
+---
+- name: Add mutualaid daemon user
+  user:
+    name: {{ creds['mutualaid']['daemon']['user'] }}
+    shell: /bin/bash
+    groups: daemon
+    append: yes
+    password: {{ creds['mutualaid']['daemon']['pass'] | password_hash('sha512') }}
+
+- name: Add protonmail bridge daemon user
+  user:
+    name: {{ creds['protonmail']['daemon']['user'] }}
+    shell: /bin/bash
+    groups: daemon
+    append: yes
+    password: {{ creds['protonmail']['daemon']['pass'] | password_hash('sha512') }}
+
+- name: Add nextcloud daemon user
+  user:
+    name: {{ creds['nextcloud']['daemon']['user'] }}
+    shell: /bin/bash
+    groups: daemon
+    append: yes
+    password: {{ creds['nextcloud']['daemon']['pass'] | password_hash('sha512') }}

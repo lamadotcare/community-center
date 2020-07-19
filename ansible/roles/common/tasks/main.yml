@@ -1,0 +1,18 @@
+---
+# Configure DNS
+- name: Configure DNS
+  dns:
+
+# Configure NTP
+- name: Install NTP
+  apt:
+    name: ntp
+    state: present
+  tags: ntp
+
+- name: Start and Enable NTP service
+  service:
+    name: ntpd
+    state: started
+    enabled: yes
+  tags: ntp

@@ -1,0 +1,27 @@
+---
+# Let's build a community center!
+- name: Preflight check
+  hosts: localhost
+  tasks:
+    ping: {{inventory_hostname}}
+
+- name: Configure the base system
+  roles:
+    - common
+    - users
+
+- name: Install app dependencies
+  roles:
+    - ruby
+    - nodejs
+    - postgres
+    - nginx
+    - redis
+    - certbot
+    - postfix
+
+- name: Install and configure apps
+  roles:
+    - nextcloud
+    - protonmail
+    - mutualaid

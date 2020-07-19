@@ -1,0 +1,3 @@
+---
+# Default to CloudFlare DNS
+dns: 1.1.1.1

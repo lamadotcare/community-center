@@ -1,3 +1,5 @@
+# This software is not yet functional.
+
 # Community Center
 A complete self-hosted application suite for organizing and supporting mutual aid.
 
